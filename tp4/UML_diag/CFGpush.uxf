@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>20</zoom_level>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>560</x>
+      <y>100</y>
+      <w>300</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Start</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>180</y>
+      <w>60</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>540</x>
+      <y>360</y>
+      <w>340</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>call elements.add(value)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>560</x>
+      <y>620</y>
+      <w>300</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Exit</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>440</y>
+      <w>60</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

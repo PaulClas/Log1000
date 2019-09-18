@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>15</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>0</y>
+      <w>150</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>start</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>135</y>
+      <w>420</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>ssize_t remaining_bytes = name.size();
+    ssize_t valid_bytes;
+    const char *remainder = name.c_str();
+    const char *invalid;
+    char *str = NULL;
+    char *pos;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>375</y>
+      <w>270</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>if (remaining_bytes != 0)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>480</y>
+      <w>600</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>if (utf8_validate_c_str(remainder, remaining_bytes, &amp;invalid))</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>585</y>
+      <w>330</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>valid_bytes = invalid- remainder;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>690</y>
+      <w>150</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>if(str ==NULL)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>780</y>
+      <w>360</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>str = new char [3* remaining_bytes];</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>870</y>
+      <w>360</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>pos = str;
+strncpy(pos, remainder, valid_bytes);
+pos += valid_bytes;
+pos[0] = '\357';
+pos[1] = '\277';
+pos[2] = '\275';
+pos += 3;
+remaining_bytes -= valid_bytes + 1;
+remainder = invalid + 1;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>30</y>
+      <w>45</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>300</y>
+      <w>45</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>375</y>
+      <w>225</w>
+      <h>900</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+false</panel_attributes>
+    <additional_attributes>130.0;580.0;10.0;580.0;10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>1215</y>
+      <w>150</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>if( str ==NULL)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>480</y>
+      <w>165</w>
+      <h>780</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+true</panel_attributes>
+    <additional_attributes>90.0;500.0;10.0;500.0;10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>405</y>
+      <w>75</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+true</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>510</y>
+      <w>90</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+false</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>615</y>
+      <w>45</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>720</y>
+      <w>75</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+true</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>135</x>
+      <y>705</y>
+      <w>90</w>
+      <h>345</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+false</panel_attributes>
+    <additional_attributes>40.0;210.0;10.0;210.0;10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>345</x>
+      <y>390</y>
+      <w>525</w>
+      <h>840</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;330.0;10.0;330.0;540.0;10.0;540.0;10.0;480.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>810</y>
+      <w>45</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>1215</y>
+      <w>360</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>return std::string(name)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>1215</y>
+      <w>180</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+true</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>255</x>
+      <y>1245</y>
+      <w>90</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+false</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>1395</y>
+      <w>495</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>strncpy(pos, remainder, remaining_bytes);
+    pos += remaining_bytes;
+
+    std::string answer(str, pos - str);
+    assert(utf8_validate_c_str(answer.c_str(), -1, NULL));
+
+    delete[] str;
+
+    return answer;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>1740</y>
+      <w>630</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>End</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>1245</y>
+      <w>45</w>
+      <h>525</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>405</x>
+      <y>1620</y>
+      <w>45</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
