@@ -1,0 +1,107 @@
+﻿Paul Clas 1846912
+
+Gaspar Faure 1903623
+
+
+
+
+
+
+
+
+TP5
+
+
+LOG1000
+
+
+
+
+
+
+
+
+
+10 avril 2018
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+École Polytechnique 
+Répartition des points de l’évaluation [/80]:
+
+Respect des formats et consignes demandées pour la rédaction du rapport. [/4]
+
+E1) Une mauvaise odeur dans les attributs [/32]
+
+1) [/2]
+Le fait d’avoir des attributs qui pourrait remplir le rôle d’attribut dans une autre classe dans une même classe est une odeur grave. Cela rend la classe grosse, ce que l’on veut éviter. 
+
+2) [/2]
+Il faudrait extraire la classe équipe car « lorsqu’on se retrouve avec une classe qui fait le travail qui devrait être fait par deux classes. Il faut créer une nouvelle classe et déplacer les attributs et méthodes pertinents vers la nouvelle classe. » tutoriel.pdf 
+
+3) [/6]
+Les methodes qui seront impactées par ce changement sont :
+	- Joueur(string, string, int, string, string);
+	- string getNomEquipe();
+	- string getPaysEquipe();
+	- void associerEquipe(string, string);
+	- void saveJoueur(string);
+	- void afficher();
+	- Joueur* trouverJoueur(string, string,string);
+
+
+4) [/4]
+Les attributs qu’il faut modifier par ce changement sont : 
+	- string teamName;
+	- string teamPays;
+
+5) [/6]
+Étape
+Description
+Extraire Classe
+On créer la classe Équipe a laquelle on donne les attributs teamName et teamPays et on ajoute un pointeur vers equipe pour chaque joueur.
+Supprimer attributs/paramètres inutile 
+On supprime teamName et teamPays de Joueur()et de trouverJoueur().
+Création des attributs dans la classe Équipe.
+Creation des attributs teamName et teamPays.
+Création constructeur dans la classe Équipe.
+Création d’un constructeur Équipe avec les paramètres teamName et teamPays
+Création des méthodes dans la classe Équipe.
+Création des getNomEquipe() et getPaysEquipe() dans la classe Équipe.
+
+6) [/6]
+
+7) [/4]
+8) [/2]
+
+E2) Une mauvaise odeur dans les méthodes [/22]
+
+1) [/2]
+2) [/6]
+3) [/6]
+4) [/4]
+5) [/2]
+
+E3) Utilisation des variables [/22]
+
+1) [/6]
+2) [/2]
+3) [/4]
+4) [/4]
+5) [/4]
+6) [/2]
