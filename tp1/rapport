@@ -1,0 +1,296 @@
+Rapport Laboratoire 1 - LOG1000-100
+Equipier 1: Paul Clas
+Equipier 2: Gaspar Faure
+
+E1.1. [/3]
+a. [/2]
+commit 1dad920f4384258d34dbf16e429920486a95f54b (HEAD -> master, origin/master, origin/HEAD)
+Author: Paul Clas <paclab@l4714-12.info.polymtl.ca>
+Date:   Tue Jan 23 13:32:09 2018 -0500
+
+    Ajout du TP1 au dossier Log1000-100
+
+commit 1b2a6fdc629acea28d1672e5941d0912728eeb7f
+Author: admin <gigl-technique@polymtl.ca>
+Date:   Tue Sep 11 15:51:58 2012 -0400
+
+    Commit administratif
+
+commit 70996bca0add50159f527a3495c0e19d965081c1
+Author: Luc Lalonde <Luc.Lalonde@polymtl.ca>
+Date:   Tue Sep 11 15:31:01 2012 -0400
+
+    Premier commit
+b. [/1]
+git log : affiche tous les commits qui ont ete fait( auteur, date et commentaire, numero de serie) en ordre chronologique inverse.
+git log -p: affiche les fichiers et leurs changements ainsi que tous les commits. "montre les differences introduites entre chaque validation" Pro Git, Scott Chacon and Ben Straub,Second edition, Apress, 2017.
+
+E1.2 [/10]
+a.[/3]
+[paclab@l4714-12 src]$ git status
+Sur la branche master
+Votre branche est à jour avec 'origin/master'.
+Modifications qui ne seront pas validées :
+  (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
+  (utilisez "git checkout -- <fichier>..." pour annuler les modifications dans la copie de travail)
+
+	modifié :         HashMap.cpp
+	modifié :         HashMap.h
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+
+	../rapport
+	pari
+
+aucune modification n'a été ajoutée à la validation (utilisez "git add" ou "git commit -a")
+b. [/1]
+HashMap.h et HashMap.cpp sont ecris en rouge dans la console car les modifications de ces fichiers n ont pas ete mise a jour dans Git.
+Cette situation est normal car nous n avons pas encore executer les commandes git add, git commit, git push.
+
+a. [/3]
+
+Username for 'https://githost.gi.polymtl.ca': gafaua
+Password for 'https://gafaua@githost.gi.polymtl.ca':
+remote: Counting objects: 22, done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 14 (delta 6), reused 0 (delta 0)
+Dépaquetage des objets: 100% (14/14), fait.
+Depuis https://githost.gi.polymtl.ca/git/log1000-100
+   ae3f9ed..ddd6d3e  master     -> origin/master
+Mise à jour ae3f9ed..ddd6d3e
+Fast-forward
+ Tp1_v2/rapport         | 56 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Tp1_v2/src/HashMap.cpp |  3 +--
+ Tp1_v2/src/HashMap.h   |  2 +-
+ 3 files changed, 58 insertions(+), 3 deletions(-)
+ create mode 100644 Tp1_v2/rapport
+
+
+b. [/2]
+Non, git n'a pas détecté de conflit, et c'est normal, car nous n'avons pas modifié la même ligne à l'intérieur du même fichier.
+Il est donc normal qu'aucun conflit n'ait été détecté.
+
+c. [/1]
+*   ddd6d3e (HEAD -> master, origin/master, origin/HEAD) Merge branch 'master' of https://githost.gi.polymtl.ca/git/log1000-100
+|\
+| * ae3f9ed Modification du fichier 'SomeKeyHash.cpp', ajout de la fonction hash'
+* | f42287f Ajout du rapport du lab 1
+* | 1dd918a Ajout des fichiers HashMap.h et HashMap.cpp
+|/
+* 1dad920 Ajout du TP1 au dossier Log1000-100
+* 1b2a6fd Commit administratif
+* 70996bc Premier commit
+
+E1.3 [/10]
+3.
+a. [/2]
+Sur la branche master
+Votre branche est à jour avec 'origin/master'.
+Modifications qui ne seront pas validées :
+  (utilisez "git add <fichier>..." pour mettre à jour ce qui sera validé)
+  (utilisez "git checkout -- <fichier>..." pour annuler les modifications dans la copie de travail)
+
+	modifié :         main.cpp
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+
+	pari
+
+aucune modification n'a été ajoutée à la validation (utilisez "git add" ou "git commit -a")
+
+b. [/1]
+[paclab@l4714-12 src]$ g++ -o pari *.cpp
+main.cpp:15:5: warning: le troisième argument de « int main(int, char**, std::__cxx11::string) » devrait probablement être « char ** » [-Wmain]
+ int main(int argc, char** argv, string nomFichier) {
+
+5.
+a. [/2]
+[paclab@l4714-12 src]$ git log --graph --decorate --all --oneline
+* 095f973 (HEAD -> master) Enregistrement du fichier 'rapport'
+* 2848ad5 Enregistrement du fichier 'main.cpp' avec la fonction capable d afficher chaque mot d un fichier
+| * ff7a7dc (origin/master, origin/HEAD) Ajout d'un commentaire expliquant le but du logiciel pari dans le main
+|/  
+* dee0f8c Modification du fichier 'rapport'
+*   ddd6d3e Merge branch 'master' of https://githost.gi.polymtl.ca/git/log1000-100
+|\  
+| * ae3f9ed Modification du fichier 'SomeKeyHash.cpp', ajout de la fonction hash'
+* | f42287f Ajout du rapport du lab 1
+* | 1dd918a Ajout des fichiers HashMap.h et HashMap.cpp
+|/  
+* 1dad920 Ajout du TP1 au dossier Log1000-100
+* 1b2a6fd Commit administratif
+* 70996bc Premier commit
+
+b. [/2]
+Notre branche et 'origin/master' ont divergé et ont 2 et 1 commits différents chacune respectivement.Il y aura un conflit car nous avons des fichiers non-fusionnes a cause de nos modifications sur main.cpp . 
+
+c. [/2]
+error: Impossible de fusionner car vous avez des fichiers non fusionnés.
+astuce: Corrigez-les puis lancez 'git add/rm <fichier>'
+astuce: si nécessaire pour marquer la résolution et valider.
+fatal: Abandon à cause de conflit non résolu.
+
+d. [/1]
+* 8321988 (HEAD -> master, origin/master, origin/HEAD) Enregistrement des ajouts au main.cpp en vue de regler le probleme de fusion
+*   38f95cf Essai resolution du conflit de fusion en faisant un push de notre main.cpp
+|\
+| * ff7a7dc Ajout d'un commentaire expliquant le but du logiciel pari dans le main
+* | 095f973 Enregistrement du fichier 'rapport'
+* | 2848ad5 Enregistrement du fichier 'main.cpp' avec la fonction capable d afficher chaque mot d un fichier
+|/
+* dee0f8c Modification du fichier 'rapport'
+*   ddd6d3e Merge branch 'master' of https://githost.gi.polymtl.ca/git/log1000-100
+|\
+| * ae3f9ed Modification du fichier 'SomeKeyHash.cpp', ajout de la fonction hash'
+* | f42287f Ajout du rapport du lab 1
+* | 1dd918a Ajout des fichiers HashMap.h et HashMap.cpp
+|/
+* 1dad920 Ajout du TP1 au dossier Log1000-100
+* 1b2a6fd Commit administratif
+* 70996bc Premier commit
+
+
+
+E1.4 [/10]
+
+5 a. [/3]
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 3), reused 0 (delta 0)
+Dépaquetage des objets: 100% (5/5), fait.
+Depuis https://githost.gi.polymtl.ca/git/log1000-100
+   7b4da4d..2d9e572  master     -> origin/master
+Fusion automatique de Tp1_v2/src/main.cpp
+CONFLIT (contenu) : Conflit de fusion dans Tp1_v2/src/main.cpp
+La fusion automatique a échoué ; réglez les conflits et validez le résultat.
+[gafaua@l4714-12 src]$
+
+
+7.
+a. [/3]
+Git n a pas detecte de conflit car nous avons anticipe le probleme et avons fusionne nos fichiers avant de proceder a la creation d une nouvelle-branche.
+
+[paclab@l4714-12 Tp1_v2]$ git log --graph --decorate --all --oneline
+*   535ac77 (HEAD -> master) Merge branch 'master' of https://githost.gi.polymtl.ca/git/log1000-100
+|\  
+| *   43ddbf4 (origin/master, origin/HEAD) Merge branch 'master' of https://githost.gi.polymtl.ca/git/log1000-100
+| |\  
+| * | 5cc72f8 modification mineure dans le main.cpp
+* | | 3f63169 Nous refaisons l exercice pour mieux comprendre la creation d une nouvelle branche sur git
+| |/  
+|/|   
+| | * 9fe177a (nouvelle-branche-2) Nous avons compris comment marchait le git checkout et recreons le fichier 'textSurMaBranche3' dans la nouvelle branch nouvelle-branche-2.
+| |/  
+|/|   
+* | fe47e2d ajout du fichier 'textSurMaBranche.txt'
+|/  
+*   5ca0292 Merge branch 'master' of https://githost.gi.polymtl.ca/git/log1000-100
+|\  
+| * 010197a Modification du rapport E1.4 5a.
+* | f18932a Enregistrement des modifications generales sur main.cpp
+|/  
+*   b54a559 Résolution du conflit sur le main.cpp
+|\  
+| * 2d9e572 (nouvelle-branche) Ajout des modification HashMap map et compteur au main.cpp
+* | c06966e Détermination du mot ayant la plus grande occurence dans le main.cpp
+|/  
+* 7b4da4d Enregistrement du rapport, fin E1.3
+* b72d025 Enregistrement du rapport jusqu a E1.4-7-d
+* 8321988 Enregistrement des ajouts au main.cpp en vue de regler le probleme de fusion
+*   38f95cf Essai resolution du conflit de fusion en faisant un push de notre main.cpp
+|\  
+| * ff7a7dc Ajout d'un commentaire expliquant le but du logiciel pari dans le main
+* | 095f973 Enregistrement du fichier 'rapport'
+* | 2848ad5 Enregistrement du fichier 'main.cpp' avec la fonction capable d afficher chaque mot d un fichier
+|/  
+* dee0f8c Modification du fichier 'rapport'
+*   ddd6d3e Merge branch 'master' of https://githost.gi.polymtl.ca/git/log1000-100
+|\  
+| * ae3f9ed Modification du fichier 'SomeKeyHash.cpp', ajout de la fonction hash'
+* | f42287f Ajout du rapport du lab 1
+* | 1dd918a Ajout des fichiers HashMap.h et HashMap.cpp
+|/  
+* 1dad920 Ajout du TP1 au dossier Log1000-100
+* 1b2a6fd Commit administratif
+* 70996bc Premier commit
+
+b. [/3]
+
+c. [/1]
+commit f641215d4154498ae48fc08760c71b599579c3e2 (HEAD -> master, origin/master, origin/HEAD)
+Author: Paul Clas <paclab@l4714-12.info.polymtl.ca>
+Date:   Tue Jan 23 17:37:31 2018 -0500
+
+    Modification au rapport sur la question E1.4.7
+
+commit 535ac778acfb5a718ba78fe854478b5ab6f71847
+Merge: 3f63169 43ddbf4
+Author: Paul Clas <paclab@l4714-12.info.polymtl.ca>
+Date:   Tue Jan 23 17:32:37 2018 -0500
+
+    Merge branch 'master' of https://githost.gi.polymtl.ca/git/log1000-100
+
+commit 3f63169a2ea2bffdef580c13c37a20cf446fc046
+Author: Paul Clas <paclab@l4714-12.info.polymtl.ca>
+Date:   Tue Jan 23 17:23:44 2018 -0500
+
+    Nous refaisons l exercice pour mieux comprendre la creation d une nouvelle branche sur git
+
+commit 43ddbf4c978daad27f35eec8d89130252f195247
+Merge: 5cc72f8 fe47e2d
+Author: Gaspar Faure <gafaua@l4714-12.info.polymtl.ca>
+Date:   Tue Jan 23 17:15:54 2018 -0500
+
+    Merge branch 'master' of https://githost.gi.polymtl.ca/git/log1000-100
+
+commit 5cc72f86cfbe1a86d16b873d2d958b89ef6e325d
+Author: Gaspar Faure <gafaua@l4714-12.info.polymtl.ca>
+Date:   Tue Jan 23 17:15:18 2018 -0500
+
+    modification mineure dans le main.cpp
+
+commit fe47e2d3a492b2f117c6e2ef5e2436faaf81ef10
+Author: Paul Clas <paclab@l4714-12.info.polymtl.ca>
+Date:   Tue Jan 23 17:10:20 2018 -0500
+
+d. [/1]
+
+E2.1 [/5]
+
+pari:
+
+HashMap.o:
+	HashMap.cpp
+	HashMap.h
+	HashNode.h
+	SomekeyHash.h
+
+SomekeyHash.o:
+	SomekeyHash.cpp
+	SomekeyHash.o
+
+main.o:
+	main.cpp
+	HashMap.h
+
+E2.2 [/15]
+
+VOIR LE MAKEFILE
+
+Simulations des commandes touch
+
+[gafaua@l4714-12 src]$ touch src HashMap.h; make
+g++ -c main.cpp HashMap.h
+g++ -c SomeKeyHash.h SomeKeyHash.cpp
+g++    -c -o HashMap.o HashMap.cpp
+g++ main.o SomeKeyHash.o HashMap.o -o pari.out
+[gafaua@l4714-12 src]$
+
+g++ -c main.cpp HashMap.h
+g++ -c SomeKeyHash.h SomeKeyHash.cpp
+g++    -c -o HashMap.o HashMap.cpp
+g++ main.o SomeKeyHash.o HashMap.o -o pari.out
+
+
